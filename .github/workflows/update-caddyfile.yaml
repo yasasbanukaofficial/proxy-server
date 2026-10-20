@@ -31,6 +31,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: 22
+          timeout: 60s
+          command_timeout: 2m
           source: "docker-compose.yaml,Caddyfile"
           target: "/home/deploy/opt/proxy"
 
