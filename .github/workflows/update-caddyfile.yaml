@@ -36,7 +36,7 @@ jobs:
           source: "docker-compose.yaml,Caddyfile"
           target: "/home/deploy/opt/proxy"
 
-      - name: Start Docker Compose to run Caddyfile
+      - name: Start Docker Compose to run or reload Caddyfile
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.HOST }}
@@ -46,3 +46,4 @@ jobs:
           script: |
             cd /home/deploy/opt/proxy
             docker compose up -d
+            docker compose exec -T caddy caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile
