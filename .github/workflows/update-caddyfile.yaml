@@ -32,6 +32,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: 22
           source: "docker-compose.yaml,Caddyfile"
+          target: "/home/deploy/opt/proxy"
 
       - name: Start Docker Compose to run Caddyfile
         uses: appleboy/ssh-action@v1
