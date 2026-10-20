@@ -45,5 +45,5 @@ jobs:
           port: 22
           script: |
             cd /home/deploy/opt/proxy
-            sudo docker compose up -d --force-recreate
+            docker compose up -d --force-recreate
             docker compose exec -T caddy caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile
