@@ -1,3 +1,8 @@
 banu-server.duckdns.org {
     respond "Caddy is running"
 }
+
+n8n-banu-server.duckdns.org {
+    reverse_proxy :5678
+}
+
