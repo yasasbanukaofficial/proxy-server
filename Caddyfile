@@ -3,6 +3,6 @@ banu-server.duckdns.org {
 }
 
 n8n-banu-server.duckdns.org {
-    reverse_proxy :5678
+    reverse_proxy n8n:5678
 }
 
